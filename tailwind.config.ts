@@ -1,19 +1,63 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
+    darkMode: ["class"],
+    content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-      },
-    },
+  	extend: {
+  		colors: {
+  			background: 'hsl(var(--background))',
+  			text: 'var(--text)',
+  			background_secondary: 'var(--background_secondary)',
+  			background_tertiary: 'var(--background_tertiary)',
+  			background_quaternary: 'var(--background_quaternary)',
+  			background_quinary: 'var(--background_quinary)',
+  			background_senary: 'var(--background_senary)',
+  			background_septenary: 'var(--background_septenary)',
+  			background_octonary: 'var(--background_octonary)',
+  			background_nonary: 'var(--background_nonary)',
+  			background_denary: 'var(--background_denary)',
+  			background_unary: 'var(--background_unary)',
+  			background_ninary: 'var(--background_ninary)',
+  			li_active_background: 'var(--li_active_background)',
+  			li_active_text: 'var(--li_active_text)',
+  			logout_li_active_background: 'var(--logout_li_active_background)',
+  			logout_li_active_text: 'var(--logout_li_active_text)',
+  			foreground: 'hsl(var(--foreground))',
+			alt_text: 'var(--alt_text)',
+			primary: 'var(--primary)',
+			primary_foreground: 'var(--primary_foreground)',
+			secondary: 'var(--secondary)',
+			secondary_foreground: 'var(--secondary_foreground)',
+			muted: 'var(--muted)',
+			muted_foreground: 'var(--muted_foreground)',
+			accent: 'var(--accent)',
+			accent_foreground: 'var(--accent_foreground)',
+			destructive: 'var(--destructive)',
+			border: 'var(--border)',
+			input: 'var(--input)',
+			ring: 'var(--ring)',
+			chart_1: 'var(--chart_1)',
+			chart_2: 'var(--chart_2)',
+			chart_3: 'var(--chart_3)',
+			chart_4: 'var(--chart_4)',
+			chart_5: 'var(--chart_5)',
+			sidebar: 'var(--sidebar)',
+			sidebar_foreground: 'var(--sidebar_foreground)',
+			sidebar_primary: 'var(--sidebar_primary)',
+			sidebar_primary_foreground: 'var(--sidebar_primary_foreground)',
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		}
+  	}
   },
-  plugins: [],
+  plugins: [require("tailwindcss-animate")],
 };
 export default config;
