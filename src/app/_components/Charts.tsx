@@ -1,6 +1,8 @@
 "use client"
+
+import "@/app/globals.css"
 import * as React from "react"
-import { TrendingUp } from "lucide-react"
+import { Clock, TrendingUp } from "lucide-react"
 import { Label, Pie, PieChart } from "recharts"
 import {
   Card,
@@ -54,69 +56,157 @@ export function Charts() {
     return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
   }, [])
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Donut with Text</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-1 pb-0">
-        <ChartContainer
-          config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
-        >
-          <PieChart>
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
-            <Pie
-              data={chartData}
-              dataKey="visitors"
-              nameKey="browser"
-              innerRadius={60}
-              strokeWidth={5}
-            >
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                    return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                      >
-                        <tspan
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
-                        >
-                          {totalVisitors.toLocaleString()}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
-                        >
-                          Visitors
-                        </tspan>
-                      </text>
-                    )
-                  }
-                }}
+    <div className="flex gap-5">
+      {/* Card Section 01 */}
+      <Card className="w-[30%] p-5 h-42 mt-5 bg-background_octonary border-none">
+        <CardHeader className="p-0">
+          <CardTitle>Performance do Restaurante</CardTitle>
+          <CardDescription className="text-alt_text">Total de Pedidos no Mês</CardDescription>
+        </CardHeader> 
+
+        <CardContent className="gap-5 flex items-center justify-center">
+          <ul className="flex flex-col gap-3 mt-5">
+            <li className="flex gap-3">
+              <div className="flex items-center justify-center w-10 h-10 bg-background_ninary rounded-md">
+                <Clock className="w-5 h-5" />
+              </div>
+
+              <div className="flex flex-col">
+                <span className="font-semibold">82 New Orders</span>
+                Processando
+              </div>
+            </li>
+
+            <li className="flex gap-3">
+              <div className="flex items-center justify-center w-10 h-10 bg-background_ninary rounded-md">
+                <Clock className="w-5 h-5" />
+              </div>
+
+              <div className="flex flex-col">
+                <span className="font-semibold">82 New Orders</span>
+                Processando
+              </div>
+            </li>
+
+            <li className="flex gap-3">
+              <div className="flex items-center justify-center w-10 h-10 bg-background_ninary rounded-md">
+                <Clock className="w-5 h-5" />
+              </div>
+
+              <div className="flex flex-col">
+                <span className="font-semibold">82 New Orders</span>
+                Processando
+              </div>
+            </li>
+          </ul>
+
+          <ChartContainer
+            config={chartConfig}
+            className="flex-1 aspect-square max-h-[250px]"
+          >
+            <PieChart>
+              <ChartTooltip
+                cursor={false}
+                content={<ChartTooltipContent hideLabel />}
               />
-            </Pie>
-          </PieChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-        <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
-    </Card>
+              
+              <Pie
+                data={chartData}
+                dataKey="visitors"
+                nameKey="browser"
+                innerRadius={60}
+                strokeWidth={5}
+              >
+                <Label
+                  content={() => (
+                    <text
+                      x="50%"
+                      y="50%"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >
+                      <tspan
+                        fontSize="24"
+                        fontWeight="bold"
+                        fill="#F0F0F0"
+                      >
+                        {totalVisitors.toLocaleString()}
+                      </tspan>
+
+                      <tspan
+                        x="50%"
+                        dy="1.5em"
+                        fontSize="12"
+                        fill="#71717a"
+                      >
+                        Total de Pedidos
+                      </tspan>
+                    </text>
+                  )}
+                />
+              </Pie>
+            </PieChart>
+          </ChartContainer>
+        </CardContent>
+      </Card>
+      
+      {/* Card Section 02 */}
+      <Card className="h-42 mt-5 bg-background_octonary border-none">
+        <CardHeader>
+          <CardTitle>Performance do Restaurante</CardTitle>
+          <CardDescription className="text-alt_text">Total de Pedidos no Mês</CardDescription>
+        </CardHeader>
+
+        <CardContent className="flex-1 pb-0">
+        <ChartContainer
+            config={chartConfig}
+            className="mx-auto aspect-square max-h-[250px]"
+          >
+            <PieChart>
+              <ChartTooltip
+                cursor={false}
+                content={<ChartTooltipContent hideLabel />}
+              />
+              
+              <Pie
+                data={chartData}
+                dataKey="visitors"
+                nameKey="browser"
+                innerRadius={60}
+                strokeWidth={5}
+              >
+                <Label
+                  content={() => (
+                    <text
+                      x="50%"
+                      y="50%"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >
+                      <tspan
+                        fontSize="24"
+                        fontWeight="bold"
+                        fill="#F0F0F0"
+                      >
+                        {totalVisitors.toLocaleString()}
+                      </tspan>
+
+                      <tspan
+                        x="50%"
+                        dy="1.5em"
+                        fontSize="12"
+                        fill="#71717a"
+                      >
+                        Total de Pedidos
+                      </tspan>
+                    </text>
+                  )}
+                />
+              </Pie>
+            </PieChart>
+          </ChartContainer>
+        </CardContent>
+      </Card>
+    </div>
   )
 }

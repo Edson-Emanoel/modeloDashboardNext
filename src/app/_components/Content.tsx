@@ -15,14 +15,7 @@ export default function Content() {
 
       <Summary />
 
-      <Card className="h-42 mt-5 bg-background_octonary border-none">
-        <CardHeader>
-          <CardTitle>Performance do Restaurante</CardTitle>
-          <CardDescription className="text-alt_text">Total de Pedidos no Mês</CardDescription>
-
-          {/* <Charts /> */}
-        </CardHeader>
-      </Card>
+      <Charts />
     </div>
   );
 }
