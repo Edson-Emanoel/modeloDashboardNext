@@ -49,54 +49,49 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="flex w-screen h-screen bg-slate-800">
+    <div className="w-screen h-screen flex items-center justify-center bg-background_primary">
       {/* Seção Mobile */}
       <div
-        className="h-screen flex items-center justify-center flex-col w-full md:w-[30%] md:min-w-[320px] 
-        md:max-w-[400px] bg-background_secondary md:block text-gray-800 "
+        className="h-96 w-full md:w-[30%] md:min-w-[320px] 
+        md:max-w-[400px] flex items-center justify-center flex-col bg-background_quinary md:block rounded-md"
       >
+        
+        <h1 className="text-2xl font-bold text-center mt-8">Entre na sua Conta</h1>
 
-        <form className="w-[100%]" onSubmit={handleLogin}>
-          <div className="input-wrapper flex flex-col p-5">
-            <label className="text-sm font-semibold">E-mail</label>
-            <div className="flex items-center justify-center">
+        <form className="w-[100%] flex items-center justify-center" onSubmit={handleLogin}>
+          <div className="p-5 w-full input-wrapper flex flex-col">
+            <div className="gap-2 flex flex-col justify-center">
+              <label className="text-sm font-semibold">E-mail</label>
+
               <input
-                type="email"
-                name="email"
                 id="email"
+                name="email"
+                type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="input-class bg-background_senary"
+                className="w-full input-class bg-background_nonary h-9 rounded-sm outline-none border-none px-2"
                 required
               />
             </div>
 
-            <label className="text-sm mt-3 font-semibold">Senha</label>
-            <div className="flex items-center justify-center">
+            <div className="gap-2 flex flex-col justify-center">
+              <label className="text-sm mt-3 font-semibold">Senha</label>
+
               <input
                 type="password"
                 name="password"
                 id="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="input-class bg-background_senary"
+                className="w-full input-class bg-background_nonary h-9 rounded-sm outline-none border-none px-2"
                 required
               />
             </div>
             <span className="text-end mt-2 text-xs text-purple-700 cursor-pointer hover:underline hover:text-sm duration-300 font-semibold">
-            <Link href="/recuperar-senha">
-              Esqueci minha senha?
-            </Link>
+              <Link href="/recuperar-senha">
+                Esqueci minha senha?
+              </Link>
             </span>
-          </div>
-
-          <div className="button-wrapper w-[100%] flex flex-col items-center p-5">
-            <button
-              type="submit"
-              className="w-[100%] mb-7 bg-primary text-white p-2 rounded-md tracking-wide font-semibold"
-            >
-              Entrar
-            </button>
           </div>
         </form>
 
@@ -106,24 +101,23 @@ const Home: React.FC = () => {
           </div>
         )}
 
-        <div className="button-wrapper w-[100%] flex flex-col items-center p-5">
-          <div className="box-ou">
-            <span className="h-1 bg-primary flex-1"></span>
-            <span>Ou</span>
-            <span className="h-1 bg-primary flex-1"></span>
-          </div>
+        <div className="button-wrapper w-[100%] gap-5 flex items-center p-5">
+          <Link href="/dashboard" className="w-full flex items-center justify-center">
+            <button
+              type="submit"
+              className="w-full bg-primary text-white p-2 rounded-md tracking-wide font-semibold"
+            >
+              Entrar
+            </button>
+          </Link>
 
-          <Link href="/cadastro-user" className="w-full">
-            <button className="w-[100%] mt-7 bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">
+          <Link href="/register" className="w-full gap-5 flex items-center justify-center">
+            <button className="w-full bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">
               Cadastre-se
             </button>
           </Link>
         </div>
       </div>
-      {/* Seção Desktop */}
-      {/* <div className="hidden md:flex h-screen md:flex-1 bg-gray-200 justify-center items-center">
-        <Image src="/svg/main.svg" alt="login.svg" width={600} height={600} />
-      </div> */}
     </div>
   );
 };

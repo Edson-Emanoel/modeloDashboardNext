@@ -52,7 +52,7 @@ const chartConfig = {
 
 export function ChartBarRigh() {
   return (
-    <Card className="bg-background_octonary h-[20rem]">
+    <Card className="w-full bg-background_octonary h-[20rem]">
       <CardHeader>
         <CardTitle>Demonstrativo em barra</CardTitle>
         <CardDescription>Janeiro a Junho</CardDescription>

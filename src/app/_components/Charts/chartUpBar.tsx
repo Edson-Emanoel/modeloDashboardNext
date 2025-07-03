@@ -40,7 +40,7 @@ const chartConfig = {
 
 export function ChartBarMultiple() {
   return (
-    <Card className="bg-background_octonary h-[20rem] ">
+    <Card className="w-full bg-background_octonary h-[20rem] ">
       <CardHeader>
         <div className="flex justify-between">
 

@@ -73,7 +73,7 @@ export function ChartPieInteractive() {
   return (
     <Card
       data-chart={id}
-      className="flex flex-col h-[20rem] bg-background_octonary"
+      className="w-full flex flex-col h-[20rem] bg-background_octonary"
     >
       <ChartStyle id={id} config={{}} />
 

@@ -37,7 +37,7 @@ export function ChartRadialStacked() {
   const totalVisitors = chartData[0].desktop + chartData[0].mobile
 
   return (
-    <Card className="flex flex-col h-[20rem] bg-background_octonary">
+    <Card className="w-full flex flex-col h-[20rem] bg-background_octonary">
       <CardHeader className="items-center pb-0 mb-5">
         <CardTitle>Gráfico meia lua</CardTitle>
         <CardDescription>Janeiro 2025</CardDescription>

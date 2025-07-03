@@ -73,36 +73,38 @@ const Register: React.FC = () => {
   };
 
   return (
-    <div className="flex w-screen h-screen">
+    <div className="w-screen h-screen flex items-center justify-center">
       <div
-        className="h-screen flex items-center justify-center flex-col w-full md:w-[30%] md:min-w-[320px] 
-        md:max-w-[400px] bg-background_secondary md:block text-gray-800"
+        className="h-[500px] w-full md:w-[30%] md:min-w-[320px] 
+        md:max-w-[400px] flex items-center justify-center flex-col bg-background_quinary md:block rounded-md"
       >
-        <div className="w-[100%] flex flex-col items-center justify-center">
+        <div className="w-[100%] mt-5 flex flex-col items-center justify-center">
           <h1 className="text-2xl font-bold">Seja bem vindo</h1>
         </div>
 
         <form className="w-[100%]" onSubmit={handleRegister}>
-          <div className="input-wrapper flex flex-col p-5">
+          <div className="input-wrapper gap-2 flex flex-col p-5">
             <label className="text-sm">Nome completo</label>
+
             <input
               type="text"
               name="nome"
               id="nome"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="input-class bg-background_senary"
+              className="w-full input-class bg-background_nonary h-9 rounded-sm outline-none border-none px-2"
               required
             />
 
             <label className="text-sm mt-3">Email</label>
+
             <input
               type="email"
               name="email"
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="input-class bg-background_senary"
+              className="w-full input-class bg-background_nonary h-9 rounded-sm outline-none border-none px-2"
               required
             />
 
@@ -113,7 +115,7 @@ const Register: React.FC = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="input-class bg-background_senary"
+              className="w-full input-class bg-background_nonary h-9 rounded-sm outline-none border-none px-2"
               required
             />
 
@@ -124,19 +126,9 @@ const Register: React.FC = () => {
               id="confirmarSenha"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="input-class bg-background_senary"
+              className="w-full input-class bg-background_nonary h-9 rounded-sm outline-none border-none px-2"
               required
             />
-          </div>
-
-          <div className="button-wrapper w-[100%] flex flex-col items-center p-5">
-            <button
-              type="submit"
-              className="w-[100%] mb-7 bg-primary text-white p-2 rounded-md tracking-wide font-semibold"
-              disabled={loading}
-            >
-              {loading ? "Cadastrando..." : "Cadastrar"}
-            </button>
           </div>
         </form>
 
@@ -146,15 +138,18 @@ const Register: React.FC = () => {
           </div>
         )}
 
-        <div className="button-wrapper w-[100%] flex flex-col items-center p-5">
-          <div className="box-ou">
-            <span className="h-1 bg-primary flex-1"></span>
-            <span>Ou</span>
-            <span className="h-1 bg-primary flex-1"></span>
-          </div>
+        <div className="button-wrapper w-[100%] gap-5 flex items-center p-5">
+          <button
+            type="submit"
+            className="w-full bg-primary text-white p-2 rounded-md tracking-wide font-semibold"
+            disabled={loading}
+          >
+            {loading ? "Cadastrando..." : "Cadastrar"}
+          </button>
+
           <Link href="/" className="w-full">
-            <button className="w-[100%] mt-7 bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">
-              Voltar para login?
+            <button className="w-[100%] bg-gray-300 font-semibold tracking-wide text-gray-900 p-2 rounded-md">
+              Voltar para login
             </button>
           </Link>
         </div>
