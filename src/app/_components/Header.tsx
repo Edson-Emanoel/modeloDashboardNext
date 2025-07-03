@@ -4,7 +4,7 @@ import { Search, SunDim, Moon, Bell, Languages } from "lucide-react";
 export default function Header() {
   return (
     <header className="w-[98%] h-16 gap-2 flex items-center">
-      <div className="w-full p-2 gap-5 flex items-center bg-background_denary rounded-xl">
+      <div className="w-full p-2 gap-5 flex items-center bg-background_denary rounded-md">
         <input type="text" className="w-full bg-background_denary text-text outline-none border-none" placeholder="Search" />
 
         <Search className="w-4 h-4 text-text" />
@@ -27,9 +27,9 @@ export default function Header() {
         </button>
       </div>
 
-      <div className="p-.5 min-w-40 gap-5 flex items-center justify-center bg-background_denary rounded-md !important">
+      <div className="p-.5 min-w-60 gap-5 flex items-center justify-center bg-background_denary rounded-md !important">
         <div className="flex flex-col">
-          <span className="text-sm">Hello, <b>Mr Muel</b></span>
+          <span className="text-sm">Seja bem-vindo, <b>Mr Muel</b></span>
           <p className="text-sm font-semibold">Admin</p>
         </div>
 

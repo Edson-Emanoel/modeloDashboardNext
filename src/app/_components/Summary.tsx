@@ -2,8 +2,8 @@ import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/ca
 
 export default function Summary() {
   return (
-    <div className="w-full flex gap-10">
-      <Card className="flex-1 h-42 bg-background_octonary border-none">
+    <div className="w-full flex gap-5">
+      <Card className="flex-1 h-42 bg-background_octonary border-none rounded-cardRadius">
         <CardHeader>
           <CardTitle>64</CardTitle>
           <CardDescription>Total de Pedidos no Mês</CardDescription>
@@ -11,7 +11,7 @@ export default function Summary() {
         </CardHeader>
       </Card>
       
-      <Card className="flex-1 h-42 bg-background_octonary border-none">
+      <Card className="flex-1 h-42 bg-background_octonary border-none rounded-cardRadius">
         <CardHeader>
           <CardTitle>64</CardTitle>
           <CardDescription>Total de Pedidos no Mês</CardDescription>
@@ -19,7 +19,7 @@ export default function Summary() {
         </CardHeader>
       </Card>
 
-      <Card className="flex-1 h-42 bg-background_octonary border-none">
+      <Card className="flex-1 h-42 bg-background_octonary border-none rounded-cardRadius">
         <CardHeader>
           <CardTitle>64</CardTitle>
           <CardDescription>Total de Pedidos no Mês</CardDescription>
@@ -27,7 +27,7 @@ export default function Summary() {
         </CardHeader>
       </Card>
       
-      <Card className="flex-1 h-42 bg-background_octonary border-none">
+      <Card className="flex-1 h-42 bg-background_octonary border-none rounded-cardRadius">
         <CardHeader>
           <CardTitle>64</CardTitle>
           <CardDescription>Total de Pedidos no Mês</CardDescription>

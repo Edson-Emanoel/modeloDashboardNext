@@ -52,9 +52,13 @@ const config: Config = {
 			sidebar_primary_foreground: 'var(--sidebar_primary_foreground)',
   		},
   		borderRadius: {
-  			lg: 'var(--radius)',
-  			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+			default: '0rem',
+			cardRadius: '0.4375rem',
+			sm: '0.35rem',
+			md: '0.4375rem',
+			lg: '1rem',
+			xl: '1.5rem',
+			full: '100%',
   		}
   	}
   },
